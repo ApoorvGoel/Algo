@@ -1,6 +1,6 @@
 package Math;
 
-import Spiral.MainEntry;
+import Spiral.EntryPoint;
 
 public class Reverse {
 

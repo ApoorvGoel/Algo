@@ -2,7 +2,7 @@ package TwoPointers;
 
 import java.util.ArrayList;
 
-import Spiral.MainEntry;
+import Spiral.EntryPoint;
 
 public class RemoveDuplicates {
 	public static void main(String[] args) {

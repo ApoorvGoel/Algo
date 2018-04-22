@@ -19,6 +19,11 @@ public class ThreadScheduling {
 		A a3 = new A();
 		Thread t3 = new Thread(a3);
 		
+		t1.start();
+		t2.start();
+		t3.start();
+		
+		
 		
 		
 	}

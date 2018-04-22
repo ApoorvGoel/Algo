@@ -3,7 +3,7 @@ package InterviewBit;
 public class sqrta {
 int number;
 	public static void main(String[] args) {
-		System.out.println(new sqrta().sqrt(1));
+		System.out.println(new sqrta().sqrt(10));
 	}
 	
 	public int sqrt(int a) {

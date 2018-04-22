@@ -2,7 +2,7 @@ package InterviewBit;
 
 import java.util.ArrayList;
 
-import Spiral.MainEntry;
+import Spiral.EntryPoint;
 
 public class PrettyPrint {
 

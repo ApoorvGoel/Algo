@@ -3,7 +3,7 @@ package TwoPointers;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import Spiral.MainEntry;
+import Spiral.EntryPoint;
 
 public class threeSum {
 

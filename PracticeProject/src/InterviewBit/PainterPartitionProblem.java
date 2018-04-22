@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-import Spiral.MainEntry;
+import Spiral.EntryPoint;
 
 public class PainterPartitionProblem {
 
