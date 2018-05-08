@@ -213,11 +213,10 @@ System.out.println(a);
 System.out.println(b);
 		System.out.println(new PointsOnTheStraightLine().maxPoints(a, b));
 	}
-
-	public int gcd(int x, int y) {
-		int numerator;
-		int denominator;
-		int remainder;
+	public long gcd(long x, long y) {
+		long numerator;
+		long denominator;
+		long remainder;
 		if (x > y) {
 			numerator = x;
 			denominator = y;
@@ -235,59 +234,64 @@ System.out.println(b);
 	}
 
 	public int maxPoints(ArrayList<Integer> a, ArrayList<Integer> b) {
-		int maxPoints = 0;
-		int curMax = 0;
-		HashMap<String, Integer> hm = new HashMap<>();
-		int overLappingCounts = 0;
-		int verticalPoints = 0;
-		for (int i = 0; i < a.size(); i++) {
-			overLappingCounts = 0;
-			curMax = 0;
-			verticalPoints = 0;
-			for (int j = 0; j < a.size(); j++) {
-				if ((a.get(i) == a.get(j)) && (b.get(i) == b.get(j))) {
+		long maxPoints = 0;
+		long curMax=0;
+		HashMap<String, Long> hm = new HashMap<>();
+		long overLappingCounts=0;
+		long verticalPoints=0;
+		long HorizontalPoints=0;
+		for (long i = 0; i < a.size(); i++) {
+			overLappingCounts=0;
+			curMax=0;
+			verticalPoints=0;
+			HorizontalPoints=0;
+			for (long j = 0; j < a.size(); j++) {
+			    if(j==i)
+			        continue;
+				if((a.get((int)i)==a.get((int)j))&&(b.get((int)i)==b.get((int)j))){
 					overLappingCounts++;
 					continue;
-				} else if ((a.get(i) == a.get(j))) {
+				}
+				else if((a.get((int)i) == a.get((int)j))){
 					verticalPoints++;
 				}
+				else if(b.get((int)i)==b.get((int)j)){
+				    HorizontalPoints++;
+				}else
 				{
-					int dx = a.get(j) - a.get(i);
-					int dy = b.get(j) - b.get(i);
-					int gcd = 0;
-					if (dx != 0 && dy != 0)
-						gcd = gcd(dx, dy);
-					if (gcd != 0) {
-						dy /= gcd;
-						dx /= gcd;
-					}
-					String key = dy + "/" + dx;
-					/*		if(dy==0&&dx==0)
+				long dx = a.get((int)j) - a.get((int)i);
+				long dy = b.get((int)j) - b.get((int)i);
+				long gcd = 0;
+				if(dx!=0 && dy!=0)
+				gcd=gcd(dx, dy);
+				if(gcd!=0){
+				dy /= gcd;
+				dx /= gcd;}
+				String key = dy + "/" + dx;
+		/*		if(dy==0&&dx==0)
 				    key="0/0";
 			else	if(dy==0)
 				    key="1/0";
 			else	if(dx==0)
 				    key="0/1";
 				    System.out.println(key);*/
-					int count = 0;
-					if (hm.containsKey(key)) {
-						int val = hm.get(key);
-						val++;
-						count = hm.put(key, val);
-					} else
-						hm.put(key, 1);
-					count = count + 1;
-					curMax = (curMax > count) ? curMax : count;
-				}
+				long count = 0l;
+				if (hm.containsKey(key)) {
+					long val=hm.get(key);
+					val++;
+					count = hm.put(key, val);
+				} else
+					hm.put(key, 1l);
+				count = count + 1;
+				curMax = (curMax > count) ? curMax : count;}
 				curMax = (curMax > verticalPoints) ? curMax : verticalPoints;
-				System.out.println(i+".."+j);
+				
+				curMax = (curMax > HorizontalPoints) ? curMax : HorizontalPoints;
 			}
-			System.out.println(hm);
 			hm.clear();
-			maxPoints = (maxPoints > (curMax + overLappingCounts + 1)) ? maxPoints : curMax + overLappingCounts + 1;
-			System.out.println(maxPoints);
+			maxPoints=(maxPoints > (curMax+overLappingCounts+1)) ? maxPoints : curMax+overLappingCounts+1;
 		}
 
-		return maxPoints;
+		return (int)maxPoints;
 	}
 }
