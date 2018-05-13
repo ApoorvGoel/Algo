@@ -25,6 +25,6 @@ class BinaryTree{
 		
 		if(node==null)
 			return true;
-		
+		return true;
 	}
 }
