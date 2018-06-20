@@ -1,6 +1,7 @@
 package backtracking;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.TreeSet;
 
 //The element can be used more then once
@@ -8,14 +9,16 @@ public class CombinationSum {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> A = new ArrayList<>();
-		A.add(2);
+/*		A.add(2);
 		A.add(8);
 		A.add(4);
 		A.add(6);
 		
-		//Collections.sort(A);
-		//System.out.println(A);
-		//System.out.println(new CombinationSum().combinationSum(A,8));
+		Collections.sort(A);*/
+		A.add(1);
+		A.add(2);
+		System.out.println(A);
+		System.out.println(new CombinationSum().combinationSum(A,8));
 	}
 
 	public ArrayList<ArrayList<Integer>> combinationSum(ArrayList<Integer> A, int B) {

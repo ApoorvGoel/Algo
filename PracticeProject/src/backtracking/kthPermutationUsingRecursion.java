@@ -17,7 +17,8 @@ public class kthPermutationUsingRecursion {
 		kthPermutationUsingRecursion knP = new kthPermutationUsingRecursion();
 
 		// System.out.println(knP.startingElement(15,knP.factorial(3)));
-		System.out.println(knP.getPermutation(11, 3628802));
+		//System.out.println(knP.getPermutation(11, 3628802));
+		System.out.println(knP.getPermutation(3,4));
 	}
 
 	public long factorial(int A) {
